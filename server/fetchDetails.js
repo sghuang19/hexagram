@@ -5,7 +5,7 @@ const ICHING_URL = "https://baharna.com/iching/legge";
 const nameRegex = /^\d+\. +([a-zA-z ]+?) +\[/;
 const lineRegex = /^\w+\. +/; // matches prefix
 
-export default async function getData(data) {
+export default async function fetchDetails(data) {
   const url = `${ICHING_URL}/${data}.htm`;
   console.log("Fetching details: " + url);
   const fetchRes = await fetch(url);
