@@ -1,5 +1,5 @@
 const YangYao = () => {
-  return <div className="yao yang"></div>;
+  return <button className="yao yang"></button>;
 };
 
 export default YangYao;

@@ -1,11 +1,12 @@
 {
   "name": "iching",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "start": "node server/server.js",
     "lint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,6 +16,7 @@
   "description": "A I Ching hexagrams visualizer",
   "devDependencies": {
     "@eslint/js": "^9.8.0",
+    "@vitejs/plugin-react": "^4.3.1",
     "eslint": "^9.8.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
@@ -23,7 +25,8 @@
     "prettier": "^3.3.3"
   },
   "dependencies": {
-    "@vitejs/plugin-react": "^4.3.1",
+    "cheerio": "^1.0.0-rc.12",
+    "express": "^4.19.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "vite": "^5.3.5"
