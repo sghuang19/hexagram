@@ -11,7 +11,7 @@ router.get("/:data", async (req, res) => {
     const { data } = req.params;
     const details = await fetchDetails(data);
     res.send(JSON.stringify(details));
-  } catch (error) {
+  } catch (_) {
     res.status(500).send("Error getting the details");
   }
 });
