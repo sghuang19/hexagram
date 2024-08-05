@@ -6,10 +6,10 @@ import fetchDetails from "../../server/fetchDetails.js";
 const api = express();
 const router = Router();
 
-router.get("/:data", async (req, res) => {
+router.get("/:id", async (req, res) => {
   try {
-    const { data } = req.params;
-    const details = await fetchDetails(data);
+    const { id } = req.params;
+    const details = await fetchDetails(id);
     res.send(JSON.stringify(details));
   } catch (_) {
     res.status(500).send("Error getting the details");
