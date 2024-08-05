@@ -1,17 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 
+import DetailsBody from "./DetailsBody.jsx";
 import fetchDetails from "../hooks/fetchDetails.js";
-
-const DetailsBody = ({ details }) => {
-  // TODO: dynamically decide the component to display
-  const { judgement, statements, summary } = details;
-  return (
-    <section className="details-body">
-      <h3 className="line-index">1st NINE</h3>
-      <p className="line-statement">{statements[0]}</p>
-    </section>
-  );
-};
 
 const Details = ({ id }) => {
   const { isLoading, error, data } = useQuery({
@@ -24,7 +14,7 @@ const Details = ({ id }) => {
   }
 
   if (error) {
-    return <div>Error: {error.message}</div>;
+    return <div>Error: {error}</div>;
   }
 
   return (

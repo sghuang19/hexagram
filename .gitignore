@@ -3,6 +3,5 @@
 node_modules
 public
 .netlify
-netlify/.netlify
 # react buddy dir
 dev
