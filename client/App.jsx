@@ -1,10 +1,15 @@
 import { createRoot } from "react-dom/client";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter,
+  Navigate,
+  Route,
+  Routes,
+  useParams,
+} from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import MainDisplay from "./components/MainDisplay.jsx";
-
-import "./style.css";
+import { getRandomId, isValidId } from "./utils/idHelper.js";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -20,13 +25,25 @@ function App() {
     <BrowserRouter>
       <QueryClientProvider client={queryClient}>
         <Routes>
-          <Route path="/" element={<MainDisplay />}></Route>
-          <Route path="/:id" element={<MainDisplay />}></Route>
+          <Route path="/" element={<HomeRedirect />}></Route>
+          <Route path="/:id" element={<IdHandler />}></Route>
         </Routes>
       </QueryClientProvider>
     </BrowserRouter>
   );
 }
+
+const HomeRedirect = () => {
+  const randomId = getRandomId();
+  return <Navigate to={`/${randomId}`} />;
+};
+
+const IdHandler = () => {
+  const { id } = useParams();
+  if (isValidId(id)) return <MainDisplay />;
+  const randomId = getRandomId();
+  return <Navigate to={`/${randomId}`} />;
+};
 
 const container = document.getElementById("root");
 const root = createRoot(container);
