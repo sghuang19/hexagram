@@ -5,8 +5,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import MainDisplay from "./components/MainDisplay.jsx";
 
 import "./style.css";
-import { DevSupport } from "@react-buddy/ide-toolbox";
-import { ComponentPreviews, useInitial } from "../dev/index.js";
 
 const queryClient = new QueryClient({
   defaultOptions: {
