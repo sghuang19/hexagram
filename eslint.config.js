@@ -6,6 +6,15 @@ import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended"
 
 export default [
   { files: ["**/*.{js,jsx}"] },
+  {
+    ignores: [
+      "node_modules/*",
+      "public/*",
+      ".netlify/*",
+      "netlify/.netlify/*",
+      "dev",
+    ],
+  },
   { languageOptions: { globals: globals.browser } },
   { settings: { react: { version: "detect" } } },
   pluginJs.configs.recommended,
