@@ -2,6 +2,6 @@
 .idea
 node_modules
 public
-
-# Local Netlify folder
 .netlify
+# react buddy dir
+dev
