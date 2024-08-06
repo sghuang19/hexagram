@@ -24,7 +24,10 @@ export default [
   {
     rules: {
       "prettier/prettier": "error",
-      "no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
+      "no-unused-vars": [
+        "error",
+        { argsIgnorePattern: "^_", varsIgnorePattern: "^_" },
+      ],
       "react/prop-types": "off",
     },
   },
