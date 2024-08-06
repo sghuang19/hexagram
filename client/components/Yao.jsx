@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 import useSelectedLine from "../hooks/useSelectedLine.js";
 
 /**
@@ -11,17 +13,23 @@ export default function Yao({ lineType, lineIndex }) {
 
   const handleClick = (event, lineIndex) => {
     event.stopPropagation(); // stop event from propagating to somewhere else
-    if (selectedLine === lineIndex) setSelectedLine(0);
-    else setSelectedLine(lineIndex);
-    console.log(`Line clicked: ${lineIndex}, now ${selectedLine} is selected`);
+    setSelectedLine(selectedLine === lineIndex ? 0 : lineIndex);
   };
 
+  const selectionClass = selectedLine
+    ? selectedLine === lineIndex
+      ? " selected"
+      : " unselected"
+    : "";
+
   return (
-    <div
-      className={`yao ${lineType ? "yang" : "yin"} ${selectedLine === lineIndex ? "selected" : ""}`}
+    <motion.div
+      className={`yao ${lineType ? "yang" : "yin"}${selectionClass}`}
       onClick={(event) => {
         handleClick(event, lineIndex);
       }}
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.9 }}
     >
       {lineType ? null : (
         <>
@@ -30,6 +38,6 @@ export default function Yao({ lineType, lineIndex }) {
           <div className="yin-part"></div>
         </>
       )}
-    </div>
+    </motion.div>
   );
 }
