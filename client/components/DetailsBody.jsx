@@ -1,5 +1,7 @@
 import getLineName from "../utils/getLineName.js";
 import useSelectedLine from "../hooks/useSelectedLine.js";
+import LineStatement from "./LineStatement.jsx";
+import Judgement from "./Judgement.jsx";
 
 const DetailsBody = ({ details }) => {
   const { id, judgement, statements, summary } = details;
@@ -7,14 +9,13 @@ const DetailsBody = ({ details }) => {
   return (
     <section className="details-body">
       {selectedLine ? (
-        <>
-          <h3 className="line-index">
-            {getLineName(selectedLine, id[selectedLine - 1] === "1")}
-          </h3>
-          <p className="line-statement">{statements[selectedLine - 1]}</p>
-        </>
+        <LineStatement
+          type={id[selectedLine - 1] === "1"}
+          selectedLine={selectedLine}
+          statement={statements[selectedLine - 1]}
+        />
       ) : (
-        <p className="judgement">{judgement}</p>
+        <Judgement judgement={judgement} />
       )}
     </section>
   );
