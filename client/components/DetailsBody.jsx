@@ -1,4 +1,3 @@
-import getLineName from "../utils/getLineName.js";
 import useSelectedLine from "../hooks/useSelectedLine.js";
 import LineStatement from "./LineStatement.jsx";
 import Judgement from "./Judgement.jsx";

@@ -10,11 +10,11 @@ const Details = ({ id }) => {
   });
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div className={"details"}>Loading...</div>;
   }
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return <div className={"details"}>Error: {error}</div>;
   }
 
   return (
