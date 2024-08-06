@@ -1,9 +1,10 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-* {
+html {
   box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
 html,
@@ -35,14 +36,16 @@ body,
 .yao {
   flex: 1;
   width: 100%;
-  margin: 5px 0;
+  margin: 16px 0;
+  overflow: hidden; /* for rounded corner of yin parts */
 }
 
-.yang {
+.yao.yang {
+  border-radius: 10px;
   background-color: black;
 }
 
-.yin {
+.yao.yin {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -52,6 +55,7 @@ body,
   height: 100%;
   flex: 4;
   background-color: black;
+  border-radius: 10px;
 }
 
 .yin-gap {
@@ -65,10 +69,22 @@ body,
   align-items: center;
   justify-content: center;
   margin: 20px;
+  position: relative;
+}
+
+.name {
+  font-family: "Zhi Mang Xing", serif;
+  font-size: 100px;
+  margin: 0 auto;
+  position: absolute;
+  top: 0;
 }
 
 .details-body {
+  font-family: "Ubuntu Mono", monospace;
+  font-size: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
