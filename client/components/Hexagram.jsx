@@ -2,6 +2,7 @@ import Yao from "./Yao.jsx";
 
 /**
  * Displays the hexagram
+ *
  * @param data - A string of 6 binary digits.
  */
 const Hexagram = ({ id }) => {
