@@ -3,10 +3,10 @@ import { motion } from "framer-motion";
 import useSelectedLine from "../hooks/useSelectedLine.js";
 
 /**
- * @param {boolean} lineType - true for yang, false for yin
+ * @class
+ * @param {boolean} lineType - True for yang, false for yin
  * @param {number} lineIndex - 1 to 6, 0 is reserved for no selection state
- * @return {JSX.Element}
- * @constructor
+ * @returns {JSX.Element}
  */
 export default function Yao({ lineType, lineIndex }) {
   const [selectedLine, setSelectedLine] = useSelectedLine();

@@ -6,9 +6,8 @@ const nameRegex = /^[\d ]+\. +([a-zA-z ]+?) +\[/;
 const lineRegex = /^\w+\. +/; // matches prefix
 
 /**
- *
  * @param {string} id - Hexagram id
- * @return {Promise<{summary, judgement, name: *, statements: *[]}>}
+ * @returns {Promise<{ summary; judgement; name: any; statements: any[] }>}
  */
 export default async function fetchDetails(id) {
   const url = `${ICHING_URL}/${id}.htm`;
