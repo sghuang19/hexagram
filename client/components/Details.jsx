@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 
 import DetailsBody from "./DetailsBody.jsx";
 import fetchDetails from "../hooks/fetchDetails.js";
+import NavBar from "./NavBar.jsx";
 
 const Details = ({ id }) => {
   const { isLoading, error, data } = useQuery({
@@ -21,6 +22,7 @@ const Details = ({ id }) => {
     <div className="details">
       <h2 className="name">{data.name}</h2>
       <DetailsBody details={data} />
+      <NavBar id={id} />
     </div>
   );
 };
