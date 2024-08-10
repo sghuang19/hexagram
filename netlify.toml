@@ -1,8 +1,8 @@
 [dev]
-command = "npm run dev"
+command = "vite dev"
 
 [build]
-command = "npm run build"
+command = "vite build"
 functions = "functions"
 publish = "public"
 
