@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  @apply box-border;
+}
+*,
+*:before,
+*:after {
+  @apply border-inherit;
+}
+
+html,
+body,
+#root {
+  @apply h-full w-full overflow-hidden m-0 p-0;
+}
+
+.nav-button {
+  @apply flex-1;
+}
+
+.nav-icon {
+  @apply text-black dark:text-white w-8 h-8 md:w-12 md:h-12 lg:w-16 lg:h-16 m-auto;
+}
+
+.link {
+  @apply underline hover:no-underline;
+}

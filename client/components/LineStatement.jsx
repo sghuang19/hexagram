@@ -11,8 +11,10 @@ export default function LineStatement({ type, selectedLine, statement }) {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <h3 className="line-index">{getLineName(selectedLine, type)}</h3>
-        <p className="line-statement">{statement}</p>
+        <h3 className="line-index text-center font-bold mb-0 md:mb-4 lg:mb-8">
+          {getLineName(selectedLine, type)}
+        </h3>
+        <p className="line-statement mt-0">{statement}</p>
       </motion.div>
     </AnimatePresence>
   );
